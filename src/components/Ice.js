@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function SunnyIcet(props){
+function Ice(props){
   return (
     <React.Fragment>
       <div onClick = {() => props.whenIceClicked(props.id)}>
