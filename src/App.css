@@ -3,14 +3,50 @@ App {
 }
 
 body {
-  background: linear-gradient(0.25turn, #f21515, #f3ec78,#f21515);
+  background: linear-gradient(0.25turn, #f21515, #ea7c40, #f3ec78, #ea7c40,#f21515);
+  color:  #187b73;
+  font-size: 15px;
+}
+
+.list-box {
+  text-align: center;
+  background: rgb(206, 234, 135);
+  
+  width: 70%;
+  margin-left: 15%;
+  padding-top: 10px;
+  margin-top: 1%;
+  padding-bottom: 16px;
 }
 
 .detail-box {
   text-align: center;
-  background: rgb(206, 234, 135);
-  width: 50%;
-  margin-left: 25%;
+  background: rgb(241, 237, 153);
+
+  width: 70%;
+  margin-left: 15%;
+  padding-top: 10px;
+  margin-top: 1%;
+  padding-bottom: 16px;
+}
+
+.form-box {
+  margin-top: 1%;
+  text-align: center;
+  letter-spacing: 2px;
+ 
+  background: linear-gradient(
+    90deg,
+    rgb(226, 231, 154) 0%,
+    rgba(79, 220, 74, 1) 20%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(63, 218, 216, 1) 60%,
+    rgba(79, 220, 74, 1) 80%,
+    rgb(226, 231, 154) 100%
+    );
+  width: 70%;
+  margin-left: 15%;
   padding-bottom: 16px;
 }
 
@@ -20,14 +56,14 @@ body {
   text-align: center;
   font-weight: bold;
   font-size: 20px;
-  width: 40%;
+  width: 60%;
   background: rgb(206, 234, 135);
-  color:  #187b73;
+  
 }
 
 .submit-button {
   background-color: rgb(244, 118, 69);
-  color:  rgb(208, 46, 34);
+  color:  #075860;
   font-weight: bold;
   width: 30%;
   font-size: 20px;
@@ -49,7 +85,7 @@ body {
   padding: 4px;
 }
 
-.submit-button:hover, .detail-box:hover, .crud-button:hover,  .submit-button2:hover {
+.submit-button:hover, .list-box:hover, .crud-button:hover,  .submit-button2:hover {
   background-color:rgb(124, 233, 139); 
 }
 

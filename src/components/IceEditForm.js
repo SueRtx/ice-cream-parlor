@@ -26,7 +26,7 @@ function IceEditForm(props){
   
   return (
     <React.Fragment>
-      <h2 style={iceNameStyles}>UPDATE: {ice.names} </h2>
+      <h2>UPDATE: <em style={iceNameStyles}>{ice.names} Ice Cream </em></h2>
       <ReusableForm 
         formSubmissionHandler={handleIceEditFormSubmission}
         buttonText="Update Ice Cream" />

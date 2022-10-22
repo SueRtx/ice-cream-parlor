@@ -5,7 +5,6 @@ import IceDetail from './IceDetail';
 import IceEditForm from './IceEditForm';
 
 class IceControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +31,6 @@ class IceControl extends React.Component {
   }
 
   handleEditClick = () => {
-    console.log("handleEditClick reached!");
     this.setState({editing: true});
   }
 

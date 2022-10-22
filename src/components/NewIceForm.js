@@ -19,9 +19,10 @@ function NewIceForm(props){
 
   return (
     <React.Fragment>
+      <h1>* ADD ICE CREAM *</h1>
       <ReusableForm 
         formSubmissionHandler={handleNewIceFormSubmission}
-        buttonText="Add New Ice Cream" />
+        buttonText="ADD" />
     </React.Fragment>
   );
 }

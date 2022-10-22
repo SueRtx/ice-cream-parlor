@@ -3,13 +3,9 @@ import PropTypes from "prop-types";
 
 function ReusableForm(props) {
 
-  const formStyle = {
-    // marginLeft: "37%",
-    }
-
   return (
     <React.Fragment>
-      <div style={formStyle}>
+      <div className='form-box'>
       <form onSubmit={props.formSubmissionHandler}>
         <input 
           className='input-text'

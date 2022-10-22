@@ -9,7 +9,6 @@ function Ice(props){
     letterSpacing: '2px',
   }
 
-
   const quantityStyles = {
     color: 'green',
     fontSize: '25px',
@@ -18,12 +17,10 @@ function Ice(props){
 
   return (
     <React.Fragment>
-      <div className='detail-box'>
+      <div className='list-box'>
         <div onClick = {() => props.whenIceClicked(props.id)}>
-          <h2 style={infoColorStyles}>FLAVOR: {props.names} * PRICE: ${props.price} * </h2>
-          
+          <h2 >FLAVOR: <em style={infoColorStyles}>{props.names}</em> - PRICE: <em style={infoColorStyles}>${props.price}</em></h2>
           <h3><em style={quantityStyles}>Scoops Remaining: {props.scoops}</em></h3>
-          
         </div>
       </div>
     </React.Fragment>

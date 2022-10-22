@@ -6,11 +6,10 @@ function IceDetail(props){
 
   const infoColorStyles = {
     color: 'red',
-    fontSize: '30px',
   }
 
   const quantityStyles = {
-    color: 'green',
+    color: 'red',
     fontSize: '25px',
   }
 
@@ -18,7 +17,8 @@ function IceDetail(props){
     <React.Fragment>
       <div className='detail-box'>
         <h1>ICE CREAM DETAILS</h1>
-        <h2 style={infoColorStyles}>BRAND: {ice.brand} - FLAVOR: {ice.names}</h2>
+        <hr/>
+        <h2 >BRAND: <em style={infoColorStyles}>{props.names}{ice.brand}</em> - FLAVOR: <em style={infoColorStyles}>{ice.names}</em></h2>
         <h3>Description: {ice.description}</h3>
         <h2>* Price: ${ice.price} *</h2>
         <h3> <em style={quantityStyles}>Scoops Remaining: {ice.scoops}</em></h3>

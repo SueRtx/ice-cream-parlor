@@ -5,7 +5,8 @@ import PropTypes from "prop-types";
 function IceList(props){
   return (
     <React.Fragment>
-      
+      <h1>* ICE CREAM LIST *</h1>
+    
       {props.iceList.map((ice) =>
         <Ice
         whenIceClicked = { props.onIceSelection }
