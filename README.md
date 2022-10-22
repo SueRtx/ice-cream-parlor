@@ -22,6 +22,8 @@ When a user runs this application, they are able to track the scoops of the ice 
 
 ![Ice Cream Form](src/img/iceHome.png)
 
+![Ice Cream Form](src/img/iceForm.png)
+
 ![Ice Cream Details](src/img/iceDetails.png)
 
 ## Setup/Installation Requirements
