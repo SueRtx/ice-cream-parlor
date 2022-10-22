@@ -2,7 +2,7 @@
 
 #### By Sue Roberts
 
-####  React application for ice cream shop inventory that tracks the number of scoops they sell.
+####  React application for ice cream shop inventory that tracks the scoops of ice cream they sell.
 
 ## App Diagram
 ![Ice Cream Diagram](src/img/diagram.png)

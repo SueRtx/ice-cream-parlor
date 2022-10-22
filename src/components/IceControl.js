@@ -64,10 +64,10 @@ class IceControl extends React.Component {
       .filter(ice => ice.id !== this.state.selectedIce.id)
       .concat(iceToEdit);
     this.setState({
-        mainIceList: editedMainIceList,
-        editing: false,
-        selectedIce: null
-      });
+      mainIceList: editedMainIceList,
+      editing: false,
+      selectedIce: null
+    });
   }
 
   handleScoopSales = () => {

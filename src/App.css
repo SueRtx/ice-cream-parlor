@@ -3,7 +3,6 @@ App {
 }
 
 body {
-  /* background: linear-gradient(0.25turn, #f21515, #ea7c40, #f3ec78, #ea7c40,#f21515); */
   background: linear-gradient(0.25turn, #ea7c40, #eaa1a1, #eca077,#eaa1a1, #ea7c40 );
   color:  #187b73;
   font-size: 15px;
@@ -14,10 +13,8 @@ body {
 .list-box {
   text-align: center;
   background: rgb(241, 243, 154);
-  
   width: 70%;
   margin-left: 15%;
- 
   margin-top: 1%;
   padding: 1px;
 }
@@ -28,13 +25,10 @@ body {
     90deg,
     rgb(240, 194, 193) 0%,
     rgba(63, 218, 216, 1) 30%,
-   
     rgb(235, 241, 215) 50%,
-   
     rgba(63, 218, 216, 1) 70%,
     rgb(240, 194, 193) 100%
-    );
-
+  );
   width: 70%;
   margin-left: 15%;
   padding-top: 10px;
@@ -52,12 +46,10 @@ body {
     90deg,
     rgb(240, 194, 193) 0%,
     rgb(171, 238, 160) 30%,
-   
     rgb(244, 245, 233) 50%,
-   
     rgb(171, 238, 160) 70%,
     rgb(240, 194, 193) 100%
-    );
+  );
 }
 
 .input-text {
@@ -68,7 +60,6 @@ body {
   font-size: 20px;
   width: 60%;
   background: rgb(206, 234, 135);
-  
 }
 
 .submit-button {
@@ -97,38 +88,3 @@ body {
 .submit-button:hover, .list-box:hover, .crud-button:hover,  .submit-button2:hover {
   background-color:rgb(124, 233, 139); 
 }
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
