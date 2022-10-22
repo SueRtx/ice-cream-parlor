@@ -2,7 +2,7 @@
 
 #### By Sue Roberts
 
-####  React application for ice cream shop inventory that racks the number of scoops they sell.
+####  React application for ice cream shop inventory that tracks the number of scoops they sell.
 
 ## App Diagram
 ![Ice Cream Diagram](src/img/diagram.png)
@@ -19,10 +19,10 @@
 When a user runs this application, they are able to track the scoops of the ice cream they sell and see a detailed list of all available flavors of ice creams. Users are able to add, delete, edit and see remaining scoops of ice creams.
 
 ## Project Images
+
 ![Ice Cream Form](src/img/iceHome.png)
 
 ![Ice Cream Details](src/img/iceDetails.png)
-
 
 ## Setup/Installation Requirements
 
