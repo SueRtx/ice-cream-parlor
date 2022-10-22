@@ -20,7 +20,7 @@ function IceDetail(props){
         <hr/>
         <h2 >BRAND: <em style={infoColorStyles}>{props.names}{ice.brand}</em> - FLAVOR: <em style={infoColorStyles}>{ice.names}</em></h2>
         <h3>Description: {ice.description}</h3>
-        <h2>* Price: ${ice.price} *</h2>
+        <h2>* Price: ${ice.price}.99 *</h2>
         <h3> <em style={quantityStyles}>Scoops Remaining: {ice.scoops}</em></h3>
 
         <button onClick={() => onClickingEdit(ice.id)} className='crud-button'>Update Ice Cream</button> 

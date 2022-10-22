@@ -6,6 +6,7 @@ body {
   background: linear-gradient(0.25turn, #f21515, #ea7c40, #f3ec78, #ea7c40,#f21515);
   color:  #187b73;
   font-size: 15px;
+  text-shadow: 1px 1px 1px #090000;
 }
 
 .list-box {
