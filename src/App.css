@@ -1,4 +1,4 @@
-.App {
+App {
   text-align: center;
 }
 
@@ -11,6 +11,7 @@ body {
   background: rgb(206, 234, 135);
   width: 50%;
   margin-left: 25%;
+  padding-bottom: 16px;
 }
 
 .input-text {
@@ -40,7 +41,7 @@ body {
   background-color: rgb(206, 234, 135);
   color:  rgb(208, 46, 34);
   font-weight: bold;
-  width: 16%;
+  width: 30%;
   margin-right: 4px;
   font-size: 20px;
   margin-top: 15px;

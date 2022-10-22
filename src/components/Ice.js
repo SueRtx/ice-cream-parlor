@@ -20,7 +20,7 @@ function Ice(props){
     <React.Fragment>
       <div className='detail-box'>
         <div onClick = {() => props.whenIceClicked(props.id)}>
-          <h2 style={infoColorStyles}>FLAVOR: {props.names} * PRICE: ${props.price} </h2>
+          <h2 style={infoColorStyles}>FLAVOR: {props.names} * PRICE: ${props.price} * </h2>
           
           <h3><em style={quantityStyles}>Scoops Remaining: {props.scoops}</em></h3>
           
@@ -41,3 +41,6 @@ Ice.propTypes = {
 };
 
 export default Ice;
+
+
+

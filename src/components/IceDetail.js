@@ -16,15 +16,18 @@ function IceDetail(props){
 
   return (
     <React.Fragment>
+      <div className='detail-box'>
         <h1>ICE CREAM DETAILS</h1>
-        <h2 style={infoColorStyles}>Brand: {ice.brand} * Flavor: {ice.names} * Price: ${ice.price}</h2>
+        <h2 style={infoColorStyles}>BRAND: {ice.brand} - FLAVOR: {ice.names}</h2>
         <h3>Description: {ice.description}</h3>
+        <h2>* Price: ${ice.price} *</h2>
         <h3> <em style={quantityStyles}>Scoops Remaining: {ice.scoops}</em></h3>
 
         <button onClick={() => onClickingEdit(ice.id)} className='crud-button'>Update Ice Cream</button> 
         <button onClick={() => onClickingDelete(ice.id)} className='crud-button'>Delete Ice Cream</button>
         <button onClick={() => onClickingSell(ice.id)} className='crud-button'>Sell Scoop</button>
         <br/>
+      </div>
     </React.Fragment>
   );
 }
