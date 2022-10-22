@@ -43,6 +43,7 @@ class IceControl extends React.Component {
       formVisibleOnPage: false
     });
   }
+
   handleChangingSelectedIce = (id) => {
     const selectedIce = this.state.mainIceList.filter(ice => ice.id === id)[0];
     this.setState({selectedIce: selectedIce});
@@ -67,26 +68,50 @@ class IceControl extends React.Component {
       });
   }
 
+  handleScoopSales = () => {
+    const iceToChange = this.state.selectedIce;
+    if (this.state.selectedIce.scoops !== 0){
+      const scoopsToSell = {
+        name: iceToChange.name,
+        brand: iceToChange.brand,
+        price: iceToChange.price,
+        scoops: iceToChange.scoops -= 1,
+        id: iceToChange.id,
+        key: iceToChange.id
+      }
+      this.handleChangingSelectedIce(scoopsToSell.id)   
+    } else {
+      this.handleChangingSelectedIce(this.state.selectedIce.id)
+    }
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.editing ) {      
-      currentlyVisibleState=<IceEditForm ice={this.state.selectedIce} onIceEdit={this.handleEditingIceInList} />
+      currentlyVisibleState=<IceEditForm 
+      ice={this.state.selectedIce} 
+      onIceEdit={this.handleEditingIceInList} />
       buttonText="Return to Ice Cream List";
-    } else if (this.state.selectedIce != null) {
-        currentlyVisibleState=<IceDetail 
-        ice={this.state.selectedIce} 
-        onClickingDelete={this.handleDeletingIce} 
-        onClickingEdit={this.handleEditClick} />
-        buttonText="Return to Ice Cream List";
-    }
-    else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewIceForm onNewIceCreation={this.handleAddingNewIceToList}  />;
-      buttonText = "Return to Ice Cream List";
-    } else {
-      currentlyVisibleState = <IceList iceList={this.state.mainIceList} onIceSelection={this.handleChangingSelectedIce} />;
 
+    } else if (this.state.selectedIce != null) {
+      currentlyVisibleState=<IceDetail 
+      ice={this.state.selectedIce} 
+      onClickingDelete = {this.handleDeletingIce} 
+      onClickingEdit = {this.handleEditClick} 
+      onClickingSell = {this.handleScoopSales} />
+      buttonText="Return to Ice Cream List";
+
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewIceForm 
+      onNewIceCreation = {this.handleAddingNewIceToList}  />;
+      buttonText = "Return to Ice Cream List";
+
+    } else {
+      currentlyVisibleState = <IceList 
+      iceList = {this.state.mainIceList} 
+      onIceSelection = {this.handleChangingSelectedIce} />;
       buttonText = "Add Ice Cream";
     }
 

@@ -11,6 +11,7 @@ function IceEditForm(props){
       names: event.target.names.value, 
       brand: event.target.brand.value, 
       price: event.target.price.value, 
+      scoops: ice.scoops,
       id: ice.id}
       );
   }
