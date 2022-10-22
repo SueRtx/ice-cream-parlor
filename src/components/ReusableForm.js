@@ -2,28 +2,49 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function ReusableForm(props) {
+
+  const formStyle = {
+    // marginLeft: "37%",
+    }
+
   return (
     <React.Fragment>
+      <div style={formStyle}>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
+        <input 
+          className='input-text'
           type='text'
           name='brand'
-          placeholder='Ice Cream Brand' />  
+          required='required'
+          placeholder='Enter Ice Cream Brand' />  
+        <br/>
         <input
+          className='input-text'
           type='text'
           name='names'
-          placeholder='Ice Cream Names' />
+          required='required'
+          placeholder=' Enter Ice Cream Flavor' /> 
+        <br/>
         <input
+          className='input-text'
+          type="number" min="1" step="1"  onkeyup="if(this.value<0){this.value= this.value * -1}"
           name='price'
-          placeholder='Ice Cream Price' />
+          required='required'
+          placeholder='Enter Ice Cream Price' />
+        <br/>
         <input
+          className='input-text'
           type='text'
           name='description'
+          required='required'
           placeholder=' Enter Ice Cream Description' /> 
-
-        <button type='submit'>{props.buttonText}</button>
-
+        <br/>
+        
+        <button 
+        className='submit-button'
+        type='submit'>{props.buttonText}</button>
       </form>
+      </div>
     </React.Fragment>
   );
 }
@@ -32,4 +53,5 @@ ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string.isRequired
 };
+
 export default ReusableForm;

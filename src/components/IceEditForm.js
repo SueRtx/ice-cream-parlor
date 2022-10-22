@@ -11,13 +11,22 @@ function IceEditForm(props){
       names: event.target.names.value, 
       brand: event.target.brand.value, 
       price: event.target.price.value, 
+      description: event.target.description.value, 
       scoops: ice.scoops,
       id: ice.id}
       );
-  }
+    }
 
+    const iceNameStyles = {
+      textAlign: 'center',
+      letterSpacing: '3px',
+      fontSize: '35px',
+      color: 'rgb(208, 46, 34)',
+    }
+  
   return (
     <React.Fragment>
+      <h2 style={iceNameStyles}>UPDATE: {ice.names} </h2>
       <ReusableForm 
         formSubmissionHandler={handleIceEditFormSubmission}
         buttonText="Update Ice Cream" />
