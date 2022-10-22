@@ -1,5 +1,5 @@
 import React from "react";
-import iceCreamImage from "./../img/ice.png";
+import iceCreamImage from "./../img/ice2.png";
 import '../App.css';
 
 function Header(){
@@ -7,8 +7,8 @@ function Header(){
   const headerStyles = {
     textAlign: 'center',
     letterSpacing: '3px',
-    fontSize: '20px',
-    color: 'rgb(124, 233, 139)',
+    fontSize: '25px',
+    color: 'rgba(63, 218, 216, 1)',
     textShadow: '3px 3px 3px #090000',
   }
 

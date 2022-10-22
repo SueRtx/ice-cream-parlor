@@ -20,7 +20,7 @@ function IceEditForm(props){
     const iceNameStyles = {
       textAlign: 'center',
       letterSpacing: '3px',
-      fontSize: '35px',
+      fontSize: '25px',
       color: 'rgb(208, 46, 34)',
     }
   
