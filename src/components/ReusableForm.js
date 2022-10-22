@@ -12,15 +12,17 @@ function ReusableForm(props) {
         <input
           type='text'
           name='brand'
-          placeholder='Brand' />
-        <textarea
+          placeholder='Ice Cream Brand' />
+        <input
           name='price'
-          placeholder='Price' />
+          placeholder='Ice Cream Price' />
+
         <button type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
   );
 }
+
 ReusableForm.propTypes = {
   formSubmissionHandler: PropTypes.func,
   buttonText: PropTypes.string.isRequired

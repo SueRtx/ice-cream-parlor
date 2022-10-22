@@ -1,6 +1,8 @@
 import React from 'react';
 import NewIceForm from './NewIceForm';
 import IceList from './IceList';
+import IceDetail from './IceDetail';
+import IceEditForm from './IceEditForm';
 
 class IceControl extends React.Component {
 
@@ -9,15 +11,29 @@ class IceControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainIceList: [],
-      selectedIce: null
+      selectedIce: null,
+      editing: false 
     };
-    this.handleClick = this.handleClick.bind(this); 
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedIce != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedIce: null,
+        editing: false 
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
+  }
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
   }
 
   handleAddingNewIceToList = (newIce) => {
@@ -27,27 +43,60 @@ class IceControl extends React.Component {
       formVisibleOnPage: false
     });
   }
+  handleChangingSelectedIce = (id) => {
+    const selectedIce = this.state.mainIceList.filter(ice => ice.id === id)[0];
+    this.setState({selectedIce: selectedIce});
+  }
+  
+  handleDeletingIce = (id) => {
+    const newMainIceList = this.state.mainIceList.filter(ice => ice.id !== id);
+    this.setState({
+      mainIceList: newMainIceList,
+      selectedIce: null
+    });
+  }
+
+  handleEditingIceInList = (iceToEdit) => {
+    const editedMainIceList = this.state.mainIceList
+      .filter(ice => ice.id !== this.state.selectedIce.id)
+      .concat(iceToEdit);
+    this.setState({
+        mainIceList: editedMainIceList,
+        editing: false,
+        selectedIce: null
+      });
+  }
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewIceForm onNewIceCreation={this.handleAddingNewIceToList} />
+    if (this.state.editing ) {      
+      currentlyVisibleState=<IceEditForm ice={this.state.selectedIce} onIceEdit={this.handleEditingIceInList} />
+      buttonText="Return to Ice Cream List";
+    } else if (this.state.selectedIce != null) {
+        currentlyVisibleState=<IceDetail 
+        ice={this.state.selectedIce} 
+        onClickingDelete={this.handleDeletingIce} 
+        onClickingEdit={this.handleEditClick} />
+        buttonText="Return to Ice Cream List";
+    }
+    else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewIceForm onNewIceCreation={this.handleAddingNewIceToList}  />;
       buttonText = "Return to Ice Cream List";
     } else {
-      currentlyVisibleState = <IceList iceList={this.state.mainIceList} />; 
-      buttonText = "Add Ice"; 
+      currentlyVisibleState = <IceList iceList={this.state.mainIceList} onIceSelection={this.handleChangingSelectedIce} />;
+
+      buttonText = "Add Ice Cream";
     }
 
     return (
       <React.Fragment>
         {currentlyVisibleState}
         <button onClick={this.handleClick}>{buttonText}</button>
-      </ React.Fragment>
+      </React.Fragment>
     );
   }
-
 }
 
 export default IceControl;
