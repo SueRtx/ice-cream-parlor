@@ -3,13 +3,17 @@ import NewIceForm from './NewIceForm';
 import IceList from './IceList';
 import IceDetail from './IceDetail';
 import IceEditForm from './IceEditForm';
+import { v4 } from 'uuid';
 
 class IceControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainIceList: [],
+      mainIceList: [
+        { id: v4(), brand: "Blue Ribbon", names: "Orange", price: "5",description: "Sugar free ice cream", scoops: 10},
+        { id: v4(), brand: "Blue Ribbon", names: "Strawberry", price: "4", description: "Classic homemade ice cream", scoops: 10}
+      ],
       selectedIce: null,
       editing: false 
     };
