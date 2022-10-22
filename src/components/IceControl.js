@@ -75,6 +75,7 @@ class IceControl extends React.Component {
         name: iceToChange.name,
         brand: iceToChange.brand,
         price: iceToChange.price,
+        description: iceToChange.description,
         scoops: iceToChange.scoops -= 1,
         id: iceToChange.id,
         key: iceToChange.id
