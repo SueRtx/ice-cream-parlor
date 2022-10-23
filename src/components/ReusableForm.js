@@ -28,12 +28,19 @@ function ReusableForm(props) {
           required='required'
           placeholder='Enter Ice Cream Price' />
         <br/>
-        <input
+        {/* <input
           className='input-text'
           type='text'
           name='description'
           required='required'
-          placeholder=' Enter Ice Cream Description' /> 
+          placeholder=' Enter Ice Cream Description' />  */}
+
+        <p>Select Type of Ice Cream</p>
+        <select className='select-option ' name='description'>
+          <option selected>Classic homemade ice cream</option>
+          <option>Sugar free ice cream</option>
+          <option>Carb free ice cream</option>
+        </select>
         <br/>
         
         <button 

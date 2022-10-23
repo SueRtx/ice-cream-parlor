@@ -10,6 +10,11 @@ body {
   text-shadow: 1px 1px 1px #090000;
 }
 
+h1 {
+  color:rgba(63, 218, 216, 1);
+  text-shadow: 2px 2px 2px #090000;
+}
+
 .list-box {
   text-align: center;
   background: rgb(241, 243, 154);
@@ -59,7 +64,23 @@ body {
   font-weight: bold;
   font-size: 20px;
   width: 60%;
+  border-radius: 5px;
+  color:  #587b7e;
   background: rgb(206, 234, 135);
+  border: 1px solid #075860;
+}
+
+.select-option {
+  
+  padding: 4px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 61%;
+  border-radius: 5px;
+  color:  #587b7e;
+  background: rgb(206, 234, 135);
+  border: 1px solid #075860;
 }
 
 .submit-button {

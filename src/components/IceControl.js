@@ -11,8 +11,20 @@ class IceControl extends React.Component {
     this.state = {
       formVisibleOnPage: false,
       mainIceList: [
-        { id: v4(), brand: "Blue Ribbon", names: "Orange", price: "5",description: "Sugar free ice cream", scoops: 10},
-        { id: v4(), brand: "Blue Ribbon", names: "Strawberry", price: "4", description: "Classic homemade ice cream", scoops: 10}
+        { id: v4(), 
+          brand: "Blue Ribbon", 
+          names: "Orange", 
+          price: "5",
+          description: "Sugar free ice cream", 
+          scoops: 10
+        },
+        { id: v4(),
+          brand: "Blue Ribbon",
+          names: "Strawberry",
+          price: "4",
+          description: "Classic homemade ice cream", 
+          scoops: 10
+        }
       ],
       selectedIce: null,
       editing: false 
@@ -34,10 +46,6 @@ class IceControl extends React.Component {
     }
   }
 
-  handleEditClick = () => {
-    this.setState({editing: true});
-  }
-
   handleAddingNewIceToList = (newIce) => {
     const newMainIceList = this.state.mainIceList.concat(newIce);
     this.setState({
@@ -57,6 +65,10 @@ class IceControl extends React.Component {
       mainIceList: newMainIceList,
       selectedIce: null
     });
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
   }
 
   handleEditingIceInList = (iceToEdit) => {
@@ -108,7 +120,7 @@ class IceControl extends React.Component {
 
     } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewIceForm 
-      onNewIceCreation = {this.handleAddingNewIceToList}  />;
+      onNewIceCreation = {this.handleAddingNewIceToList} />;
       buttonText = "Return to Ice Cream List";
 
     } else {
