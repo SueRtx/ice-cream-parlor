@@ -15,6 +15,12 @@ h1 {
   text-shadow: 2px 2px 2px #090000;
 }
 
+p {
+  color:rgb(240, 101, 101);
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .list-box {
   text-align: center;
   background: rgb(241, 243, 154);
