@@ -77,7 +77,6 @@ p {
 }
 
 .select-option {
-  
   padding: 4px;
   text-align: center;
   font-weight: bold;
@@ -103,7 +102,7 @@ p {
 
 .crud-button {
   background-color: rgb(206, 234, 135);
-  color:  rgb(240, 73, 61);
+  color: rgb(240, 73, 61);
   font-weight: bold;
   width: 30%;
   margin: 5px;

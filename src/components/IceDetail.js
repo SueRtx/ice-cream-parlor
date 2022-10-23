@@ -27,7 +27,7 @@ function IceDetail(props){
         <hr/>
         <h2> INVENTORY<br/><em style={quantityStyles}> REMAIN: {ice.scoops} * SOLD: {ice.sold}</em></h2>
       
-        <button onClick={() => onClickingSell(ice.id)} className='crud-button'>SELL</button>
+        <button onClick={() => onClickingSell(ice.id)} className='crud-button'>SELL ONE SCOOP</button>
       </div>
     </React.Fragment>
   );
