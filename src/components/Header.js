@@ -14,7 +14,8 @@ function Header(){
 
   const iceStyles = {
     color: 'rgb(208, 46, 34)',
-    textShadow: '3px 3px 3px rgb(124, 233, 139)',
+    letterSpacing: '3px',
+    textShadow: '3px 3px 3px rgba(63, 218, 216, 1)',
   }
 
   return (

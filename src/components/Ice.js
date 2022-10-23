@@ -21,7 +21,6 @@ function Ice(props){
         <div onClick = {() => props.whenIceClicked(props.id)}>
           <h2 >FLAVOR: <em style={infoColorStyles}>{props.names}</em> - PRICE: <em style={infoColorStyles}>${props.price}.99</em></h2>
           <h3><em style={quantityStyles}>Scoops Remaining: {props.scoops}</em></h3>
-          <h3><em style={quantityStyles}>Scoops Sold: {props.sold}</em></h3>
         </div>
       </div>
     </React.Fragment>
