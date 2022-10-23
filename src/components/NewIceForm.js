@@ -13,6 +13,7 @@ function NewIceForm(props){
       price: event.target.price.value,
       description: event.target.description.value,
       scoops: 30,
+      sold: 0,
       id: v4()
     });
   }

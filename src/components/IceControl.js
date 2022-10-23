@@ -16,14 +16,16 @@ class IceControl extends React.Component {
           names: "Orange", 
           price: "5",
           description: "Sugar free ice cream", 
-          scoops: 10
+          scoops: 30,
+          sold: 0
         },
         { id: v4(),
           brand: "Blue Ribbon",
           names: "Strawberry",
           price: "4",
           description: "Classic homemade ice cream", 
-          scoops: 10
+          scoops: 30,
+          sold: 0
         }
       ],
       selectedIce: null,
@@ -91,6 +93,7 @@ class IceControl extends React.Component {
         price: iceToChange.price,
         description: iceToChange.description,
         scoops: iceToChange.scoops -= 1,
+        sold: iceToChange.sold += 1,
         id: iceToChange.id,
         key: iceToChange.id
       }

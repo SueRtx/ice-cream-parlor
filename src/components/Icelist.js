@@ -20,6 +20,7 @@ function IceList(props){
         price={ice.price}
         description={ice.description}
         scoops={ice.scoops}
+        sold={ice.sold}
         id={ice.id}
         key={ice.id}/>
       )}

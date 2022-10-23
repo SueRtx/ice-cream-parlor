@@ -20,12 +20,13 @@ function IceDetail(props){
         <div className='detail-box'>
         <button onClick={() => onClickingEdit(ice.id)} className='crud-button'>UPDATE</button> 
         <button onClick={() => onClickingDelete(ice.id)} className='crud-button'>DELETE</button>  
-        <hr/>
+    
         <h2 >BRAND: <em style={infoColorStyles}>{props.names}{ice.brand}</em> - FLAVOR: <em style={infoColorStyles}>{ice.names}</em></h2>
         <h3>{ice.description}</h3>
         <h2>* Price: ${ice.price}.99 *</h2>
-        <h3> <em style={quantityStyles}>Scoops Remaining: {ice.scoops}</em></h3>
         <hr/>
+        <h2> INVENTORY<br/><em style={quantityStyles}> REMAIN: {ice.scoops} * SOLD: {ice.sold}</em></h2>
+      
         <button onClick={() => onClickingSell(ice.id)} className='crud-button'>SELL</button>
       </div>
     </React.Fragment>

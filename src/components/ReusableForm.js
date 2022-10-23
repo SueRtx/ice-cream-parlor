@@ -28,12 +28,6 @@ function ReusableForm(props) {
           required='required'
           placeholder='Enter Ice Cream Price' />
         <br/>
-        {/* <input
-          className='input-text'
-          type='text'
-          name='description'
-          required='required'
-          placeholder=' Enter Ice Cream Description' />  */}
 
         <p>Select Type of Ice Cream</p>
         <select className='select-option ' name='description'>
@@ -44,8 +38,8 @@ function ReusableForm(props) {
         <br/>
         
         <button 
-        className='submit-button'
-        type='submit'>{props.buttonText}</button>
+          className='submit-button'
+          type='submit'>{props.buttonText}</button>
       </form>
       </div>
     </React.Fragment>
