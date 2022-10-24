@@ -99,26 +99,37 @@ class IceControl extends React.Component {
       }
       this.handleChangingSelectedIce(scoopsToSell.id)   
     } else {
-      this.handleChangingSelectedIce(this.state.selectedIce.id)
-    }
+      const scoopsToRestock = {
+        name: iceToChange.name,
+        brand: iceToChange.brand,
+        price: iceToChange.price,
+        description: iceToChange.description,
+        scoops: iceToChange.scoops = 30,
+        sold: iceToChange.sold = 0,
+        id: iceToChange.id,
+        key: iceToChange.id 
+    } 
+    this.handleChangingSelectedIce(scoopsToRestock.id)
   }
+}
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
 
     if (this.state.editing ) {      
-      currentlyVisibleState=<IceEditForm 
-      ice={this.state.selectedIce} 
-      onIceEdit={this.handleEditingIceInList} />
-      buttonText="Return to Ice Cream List";
+      currentlyVisibleState = <IceEditForm 
+      ice = {this.state.selectedIce} 
+      onIceEdit = {this.handleEditingIceInList} />
+      buttonText = "Return to Ice Cream List";
 
     } else if (this.state.selectedIce != null) {
-      currentlyVisibleState=<IceDetail 
-      ice={this.state.selectedIce} 
+      currentlyVisibleState = <IceDetail 
+      ice = {this.state.selectedIce} 
       onClickingDelete = {this.handleDeletingIce} 
       onClickingEdit = {this.handleEditClick} 
-      onClickingSell = {this.handleScoopSales} />
+      onClickingSell = {this.handleScoopSales}
+      onClickingRestock = {this.handleScoopSales} />
       buttonText="Return to Ice Cream List";
 
     } else if (this.state.formVisibleOnPage) {
@@ -136,7 +147,7 @@ class IceControl extends React.Component {
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick} className='submit-button'>{buttonText}</button>
+        <button onClick = {this.handleClick} className='submit-button'>{buttonText}</button>
       </React.Fragment>
     );
   }

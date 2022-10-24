@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function IceDetail(props){
-  const { ice, onClickingDelete, onClickingEdit, onClickingSell } = props; 
+  const { ice, onClickingDelete, onClickingEdit, onClickingSell,  onClickingRestock} = props; 
 
   const infoColorStyles = {
     color: 'red',
@@ -25,9 +25,19 @@ function IceDetail(props){
         <h3>{ice.description}</h3>
         <h2>* Price: ${ice.price}.99 *</h2>
         <hr/>
-        <h2> INVENTORY<br/><em style={quantityStyles}> REMAIN: {ice.scoops} * SOLD: {ice.sold}</em></h2>
+        <h2>INVENTORY<br/><em style={quantityStyles}> REMAIN: {ice.scoops} * SOLD: {ice.sold}</em></h2>
+
+        <button 
+          className='crud-button' 
+          onClick={() => onClickingSell(ice.id)} 
+          hidden={!ice.scoops}>SELL A SCOOP
+        </button>
       
-        <button onClick={() => onClickingSell(ice.id)} className='crud-button'>SELL ONE SCOOP</button>
+        <button 
+          className='crud-button' 
+          onClick={() => onClickingRestock(ice.id)} 
+          hidden={ice.scoops}>RESTOCK ICE CREAM
+        </button>
       </div>
     </React.Fragment>
   );
