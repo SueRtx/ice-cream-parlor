@@ -15,11 +15,18 @@ function IceDetail(props){
 
   return (
     <React.Fragment>
-      
         <h1>* ICE CREAM DETAILS *</h1>
         <div className='detail-box'>
-        <button onClick={() => onClickingEdit(ice.id)} className='crud-button'>UPDATE</button> 
-        <button onClick={() => onClickingDelete(ice.id)} className='crud-button'>DELETE</button>  
+        <button onClick={() => onClickingEdit(ice.id)} 
+          className='crud-button'>UPDATE</button>
+      
+        <button 
+          className='crud-button' 
+          onClick={() => onClickingRestock(ice.id)} 
+          hidden={ice.scoops}>RESTOCK ICE CREAM</button>
+
+        <button onClick={() => onClickingDelete(ice.id)} 
+          className='crud-button'>DELETE</button>  
     
         <h2 >BRAND: <em style={infoColorStyles}>{props.names}{ice.brand}</em> - FLAVOR: <em style={infoColorStyles}>{ice.names}</em></h2>
         <h3>{ice.description}</h3>
@@ -30,14 +37,7 @@ function IceDetail(props){
         <button 
           className='crud-button' 
           onClick={() => onClickingSell(ice.id)} 
-          hidden={!ice.scoops}>SELL A SCOOP
-        </button>
-      
-        <button 
-          className='crud-button' 
-          onClick={() => onClickingRestock(ice.id)} 
-          hidden={ice.scoops}>RESTOCK ICE CREAM
-        </button>
+          hidden={!ice.scoops}>SELL A SCOOP</button>
       </div>
     </React.Fragment>
   );
