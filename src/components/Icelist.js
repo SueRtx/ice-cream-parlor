@@ -17,7 +17,7 @@ function IceList(props){
         whenIceClicked = { props.onIceSelection }
         names={ice.names}
         brand={ice.brand}
-        price={ice.price}
+        price={parseInt(ice.price)}
         description={ice.description}
         scoops={ice.scoops}
         sold={ice.sold}
