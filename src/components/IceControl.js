@@ -1,6 +1,6 @@
 import React from 'react';
 import NewIceForm from './NewIceForm';
-import IceList from './IceList';
+import IceCreamList from './IceCreamList';
 import IceDetail from './IceDetail';
 import IceEditForm from './IceEditForm';
 import { v4 } from 'uuid';
@@ -10,7 +10,7 @@ class IceControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainIceList: [
+      mainIceCreamList: [
         { id: v4(), 
           brand: "Blue Ribbon", 
           names: "Orange", 
@@ -49,22 +49,22 @@ class IceControl extends React.Component {
   }
 
   handleAddingNewIceToList = (newIce) => {
-    const newMainIceList = this.state.mainIceList.concat(newIce);
+    const newMainIceCreamList = this.state.mainIceCreamList.concat(newIce);
     this.setState({
-      mainIceList: newMainIceList,
+      mainIceCreamList: newMainIceCreamList,
       formVisibleOnPage: false
     });
   }
 
   handleChangingSelectedIce = (id) => {
-    const selectedIce = this.state.mainIceList.filter(ice => ice.id === id)[0];
+    const selectedIce = this.state.mainIceCreamList.filter(ice => ice.id === id)[0];
     this.setState({selectedIce: selectedIce});
   }
   
   handleDeletingIce = (id) => {
-    const newMainIceList = this.state.mainIceList.filter(ice => ice.id !== id);
+    const newMainIceCreamList = this.state.mainIceCreamList.filter(ice => ice.id !== id);
     this.setState({
-      mainIceList: newMainIceList,
+      mainIceCreamList: newMainIceCreamList,
       selectedIce: null
     });
   }
@@ -74,11 +74,11 @@ class IceControl extends React.Component {
   }
 
   handleEditingIceInList = (iceToEdit) => {
-    const editedMainIceList = this.state.mainIceList
+    const editedMainIceCreamList = this.state.mainIceCreamList
       .filter(ice => ice.id !== this.state.selectedIce.id)
       .concat(iceToEdit);
     this.setState({
-      mainIceList: editedMainIceList,
+      mainIceCreamList: editedMainIceCreamList,
       editing: false,
       selectedIce: null
     });
@@ -138,8 +138,8 @@ class IceControl extends React.Component {
       buttonText = "Return to Ice Cream List";
 
     } else {
-      currentlyVisibleState = <IceList 
-      iceList = {this.state.mainIceList} 
+      currentlyVisibleState = <IceCreamList 
+      iceCreamList = {this.state.mainIceCreamList} 
       onIceSelection = {this.handleChangingSelectedIce} />;
       buttonText = "Add Ice Cream";
     }

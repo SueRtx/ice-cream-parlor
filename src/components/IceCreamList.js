@@ -2,7 +2,7 @@ import React from "react";
 import Ice from "./Ice";
 import PropTypes from "prop-types";
 
-function IceList(props){
+function IceCreamList(props){
 
   const instructionStyles = {
     color: 'rgb(208, 46, 34)',
@@ -12,7 +12,7 @@ function IceList(props){
     <React.Fragment>
       <h1>* ICE CREAM LIST *</h1>
       <h3 style={instructionStyles}>(Click on box below to see details)</h3>
-      {props.iceList.map((ice) =>
+      {props.iceCreamList.map((ice) =>
         <Ice
         whenIceClicked = { props.onIceSelection }
         names={ice.names}
@@ -28,9 +28,9 @@ function IceList(props){
   );
 }
 
-IceList.propTypes = {
-  iceList: PropTypes.array,
+IceCreamList.propTypes = {
+  iceCreamList: PropTypes.array,
   onIceSelection: PropTypes.func
 };
 
-export default IceList;
+export default IceCreamList;
